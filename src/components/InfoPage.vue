@@ -4,8 +4,8 @@
             <img src="@/assets/images/background1.jpg" width="612" height="792">
         </div>
         <div style="position:absolute;left:550px;top:15px" class="cls_002">
-            <input type="button" value="Save" v-on:click="save">
-            </div>
+            <input type="button" value="Save" class="saveButton" v-on:click="save">
+        </div>
 
         <div style="position:absolute;left:270.72px;top:63.25px" class="cls_002"><span class="cls_002">CLASS & LEVEL</span></div>
         <div style="position:absolute;left:270.72px;top:48.25px;" class="cls_002"><input type="text" v-model="character.class" name="class"></div>
@@ -129,6 +129,31 @@ module.exports = {
         height: 20px !important;
         font-size: 14px !important;
     }
+
+    .saveButton {
+        width: 50px;
+        box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+        background-color:#007dc1;
+        border-radius:3px;
+        border:1px solid #124d77;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size: 7px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #154682;
+    }
+    .saveButton:hover {
+        background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+        background-color:#0061a7;
+    }
+    .saveButton:active {
+        position:relative;
+        top:1px;
+    }
+
 
     span.cls_002{font-family:Arial,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
     div.cls_002{font-family:Arial,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
