@@ -11,10 +11,10 @@
         <div style="position:absolute;left:270.72px;top:48.25px;" class="cls_002"><input type="text" v-model="character.class" name="class"></div>
 
         <div style="position:absolute;left:383.47px;top:63.25px" class="cls_002"><span class="cls_002">BACKGROUND</span></div>
-        <div style="position:absolute;left:383.47px;top:48.25px" class="cls_002"><input type="text" name="background"></div>
+        <div style="position:absolute;left:383.47px;top:48.25px" class="cls_002"><input type="text" name="background" v-model="character.background"></div>
 
         <div style="position:absolute;left:480.24px;top:63.25px" class="cls_002"><span class="cls_002">PLAYER NAME</span></div>
-        <div style="position:absolute;left:480.24px;top:48.25px" class="cls_002"><input type="text" name="playerName"></div>
+        <div style="position:absolute;left:480.24px;top:48.25px" class="cls_002"><input type="text" name="playerName" v-model="character.playerName"></div>
 
         <div style="position:absolute;left:69.06px;top:89.52px" class="cls_002"><span class="cls_002">CHARACTER NAME</span></div>
         <div style="position:absolute;left:69.06px;top:60.52px" class="cls_002">
@@ -22,13 +22,18 @@
         </div>
 
         <div style="position:absolute;left:270.72px;top:89.33px" class="cls_002"><span class="cls_002">RACE</span></div>
+        <div style="position:absolute;left:270.72px;top:74.33px" class="cls_002"><input type="text" name="race" v-model="character.race"></div>
+
         <div style="position:absolute;left:383.47px;top:89.32px" class="cls_002"><span class="cls_002">ALIGNMENT</span></div>
+        <div style="position:absolute;left:383.47px;top:74.32px" class="cls_002"><input type="text" name="alignment" v-model="character.alignment"></div>
+
         <div style="position:absolute;left:480.23px;top:89.52px" class="cls_002"><span class="cls_002">EXPERIENCE POINTS</span></div>
+        <div style="position:absolute;left:480.23px;top:74.52px" class="cls_002"><input type="text" name="xp" v-model="character.xp"></div>
+
         <div style="position:absolute;left:146.36px;top:136.00px" class="cls_003"><span class="cls_003">INSPIRATION</span></div>
         <div style="position:absolute;left:41.14px;top:144.91px" class="cls_004"><span class="cls_004">STRENGTH</span></div>
-        <div style="position:absolute;left:236.71px;top:165.38px" class="cls_004"><span class="cls_004">ARMOR</span></div>
+        <div style="position:absolute;left:236.71px;top:165.38px" class="cls_004"><span class="cls_004">ARMOR<br>CLASS</span></div>
         <div style="position:absolute;left:135.60px;top:173.70px" class="cls_003"><span class="cls_003">PROFICIENCY BONUS</span></div>
-        <div style="position:absolute;left:238.79px;top:171.38px" class="cls_004"><span class="cls_004">CLASS</span></div>
         <div style="position:absolute;left:288.44px;top:174.07px" class="cls_004"><span class="cls_004">INITIATIVE</span></div>
         <div style="position:absolute;left:352.99px;top:174.07px" class="cls_004"><span class="cls_004">SPEED</span></div>
         <div style="position:absolute;left:467.73px;top:188.89px" class="cls_005"><span class="cls_005">PERSONALITY TRAITS</span></div>
@@ -100,13 +105,16 @@ module.exports = {
                 name: "",
                 class: "",
                 playerName: "",
-                characterName: ""
+                race: "",
+                alignment: "",
+                xp: ""
             }
         }
     },
     methods: {
         save: function(event) {
             console.log(JSON.stringify(this.character));
+            alert("Saved!");
         }
     }
 }
