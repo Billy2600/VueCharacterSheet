@@ -3,17 +3,23 @@
         <div style="position:absolute;left:0px;top:0px">
             <img src="@/assets/images/background1.jpg" width="612" height="792">
         </div>
+        <div style="position:absolute;left:550px;top:15px" class="cls_002">
+            <input type="button" value="Save" v-on:click="save">
+            </div>
+
         <div style="position:absolute;left:270.72px;top:63.25px" class="cls_002"><span class="cls_002">CLASS & LEVEL</span></div>
-        <div style="position:absolute;left:270.72px;top:48.25px;" class="cls_002"><input name="class"></div>
+        <div style="position:absolute;left:270.72px;top:48.25px;" class="cls_002"><input type="text" v-model="character.class" name="class"></div>
 
         <div style="position:absolute;left:383.47px;top:63.25px" class="cls_002"><span class="cls_002">BACKGROUND</span></div>
-        <div style="position:absolute;left:383.47px;top:48.25px" class="cls_002"><input name="background"></div>
+        <div style="position:absolute;left:383.47px;top:48.25px" class="cls_002"><input type="text" name="background"></div>
 
         <div style="position:absolute;left:480.24px;top:63.25px" class="cls_002"><span class="cls_002">PLAYER NAME</span></div>
-        <div style="position:absolute;left:480.24px;top:48.25px" class="cls_002"><input name="playerName"></div>
+        <div style="position:absolute;left:480.24px;top:48.25px" class="cls_002"><input type="text" name="playerName"></div>
 
         <div style="position:absolute;left:69.06px;top:89.52px" class="cls_002"><span class="cls_002">CHARACTER NAME</span></div>
-        <div style="position:absolute;left:69.06px;top:60.52px" class="cls_002"><input name="characterName" class="characterName"></div>
+        <div style="position:absolute;left:69.06px;top:60.52px" class="cls_002">
+            <input name="characterName" class="characterName" v-model="character.name">
+        </div>
 
         <div style="position:absolute;left:270.72px;top:89.33px" class="cls_002"><span class="cls_002">RACE</span></div>
         <div style="position:absolute;left:383.47px;top:89.32px" class="cls_002"><span class="cls_002">ALIGNMENT</span></div>
@@ -87,7 +93,22 @@
 
 <script>
 module.exports = {
-    props: ['characterName']
+    props: ['characterName'],
+    data: function () {
+        return {
+            character: {
+                name: "",
+                class: "",
+                playerName: "",
+                characterName: ""
+            }
+        }
+    },
+    methods: {
+        save: function(event) {
+            console.log(JSON.stringify(this.character));
+        }
+    }
 }
 </script>
 
