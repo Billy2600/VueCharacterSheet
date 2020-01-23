@@ -111,9 +111,14 @@ module.exports = {
             }
         }
     },
+    created: function() {
+        let characterObj = JSON.parse(this.$cookie.get('character'));
+        if(characterObj !== null)
+            this.character = characterObj;
+    },
     methods: {
         save: function(event) {
-            console.log(JSON.stringify(this.character));
+            this.$cookie.set('character', JSON.stringify(this.character))
             alert("Saved!");
         }
     }
