@@ -1,12 +1,18 @@
 <template>
     <div id="app">
         <h1>Character Sheet</h1>
+        <PersonGreeter personName="Travis" />
     </div>
 </template>
 
 <script>
+import PersonGreeter from './components/PerosnGreeter.vue'
+
 export default {
-    name: 'app'
+    name: 'app',
+    components: {
+        PersonGreeter
+    }
 }
 </script>
 
