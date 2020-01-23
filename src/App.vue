@@ -1,17 +1,16 @@
 <template>
     <div id="app">
-        <h1>Character Sheet</h1>
-        <PersonGreeter personName="Travis" />
+        <InfoPage characterName="Baciar" />
     </div>
 </template>
 
 <script>
-import PersonGreeter from './components/PerosnGreeter.vue'
+import InfoPage from './components/InfoPage.vue'
 
 export default {
     name: 'app',
     components: {
-        PersonGreeter
+        InfoPage
     }
 }
 </script>
@@ -21,6 +20,6 @@ export default {
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        margin-top: 15px;
     }
 </style>
